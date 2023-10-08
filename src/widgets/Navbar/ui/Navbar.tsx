@@ -16,7 +16,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={() => setIsAuthModal(true)}>
-        {t('Войти')}
+        {t('Войти!')}
       </Button>
       <Modal isOpen={isAuthModal} onClose={onToggleModal} />
     </div>
