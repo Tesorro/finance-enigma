@@ -4,14 +4,18 @@
     padding: 6px 15px;
 }
 
-.clear {
+%clear {
     padding: 0;
     border: none;
     background: none;
     outline: none;
+}
+
+.clear {
+    @extend %clear;
 
     &Inverted {
-        @extend .clear;
+        @extend %clear;
 
         color: var(--inverted-primary-color);
     }
