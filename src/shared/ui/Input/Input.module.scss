@@ -9,6 +9,7 @@
   width: 100%;
   color: transparent;
   text-shadow: 0 0 0 var(--primary-color);
+
   &:focus {
     outline: none;
   }
@@ -19,7 +20,7 @@
 }
 
 .caretWrapper {
-  flex-grow: 1; //расстягиваем на всю свободную площадь
+  flex-grow: 1; // расстягиваем на всю свободную площадь
   position: relative;
 }
 
@@ -37,9 +38,11 @@
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 0.02;
   }
+
   100% {
     opacity: 1;
   }
