@@ -48,6 +48,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'react/prop-types': 'off',
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
     // 'i18next/no-literal-string': [
     //   'error',
     //   {
