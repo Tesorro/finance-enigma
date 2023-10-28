@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -16,7 +16,7 @@ interface TextProps {
   theme?: TextTheme;
 }
 
-export const Text:FC<TextProps> = (props) => {
+export const Text:FC<TextProps> = memo((props) => {
   const {
     className, title, text, theme = TextTheme.PRIMARY,
   } = props;
@@ -26,4 +26,4 @@ export const Text:FC<TextProps> = (props) => {
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );
-};
+});

@@ -1,29 +1,38 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
-      "userId": 1
+      "userId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "json-server",
-      "userId": 2
+      "userId": "2"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "body": "some comment",
-      "postId": 1
+      "postId": "1"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Zaur",
+    "lastname": "Tsoroev",
+    "age": 33,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://lastfm.freetls.fastly.net/i/u/avatar170s/804fc65278cf493dc9e0a099ff140e29.png"
+  }
 }
