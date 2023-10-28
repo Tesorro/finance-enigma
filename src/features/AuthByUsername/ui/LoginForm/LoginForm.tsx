@@ -1,4 +1,6 @@
-import { FC, memo, useCallback } from 'react';
+import {
+  FC, memo, useCallback,
+} from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -7,6 +9,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
   getAuthError,
   getAuthIsLoading,
@@ -15,14 +18,18 @@ import {
 } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm:FC<LoginFormProps> = memo((props) => {
+const initialReducers: ReducersList = {
+  loginForm: loginReducer,
+};
+
+const LoginForm:FC<LoginFormProps> = memo((props) => {
   const { className } = props;
   const dispatch = useAppDispatch();
   const username = useSelector(getAuthUsername);
@@ -40,32 +47,35 @@ export const LoginForm:FC<LoginFormProps> = memo((props) => {
     dispatch(loginByUsername({ username, password }));
   }, [dispatch, password, username]);
   return (
-    <div className={classNames(cls.loginForm, {}, [className])}>
-      <Text title="Форма авторизации" />
-      {error && <Text text={error} theme={TextTheme.ERROR} />}
-      <Input
-        value={username}
-        onChange={onChangeUsername}
-        type="text"
-        className={cls.input}
-        placeholder="Введите логин"
-        autofocus
-      />
-      <Input
-        value={password}
-        onChange={onChangePassword}
-        type="text"
-        className={cls.input}
-        placeholder="Введите пароль"
-      />
-      <Button
-        className={cls.loginBtn}
-        theme={ButtonTheme.OUTLINE}
-        onClick={onLoginClick}
-        disabled={isLoading}
-      >
-        Войти
-      </Button>
-    </div>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+      <div className={classNames(cls.loginForm, {}, [className])}>
+        <Text title="Форма авторизации" />
+        {error && <Text text={error} theme={TextTheme.ERROR} />}
+        <Input
+          value={username}
+          onChange={onChangeUsername}
+          type="text"
+          className={cls.input}
+          placeholder="Введите логин"
+          autofocus
+        />
+        <Input
+          value={password}
+          onChange={onChangePassword}
+          type="text"
+          className={cls.input}
+          placeholder="Введите пароль"
+        />
+        <Button
+          className={cls.loginBtn}
+          theme={ButtonTheme.OUTLINE}
+          onClick={onLoginClick}
+          disabled={isLoading}
+        >
+          Войти
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   );
 });
+export default LoginForm;
