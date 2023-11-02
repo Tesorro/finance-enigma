@@ -2,7 +2,7 @@ import React, {
   FC, useCallback, useEffect, useState,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
 import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
@@ -48,7 +48,7 @@ export const Modal:FC<ModalProps> = (props) => {
 
   const onContentClick = (e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation();
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
   };
 
