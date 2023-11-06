@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import { ISidebarItem } from '../../model/items';
 import cls from './SidebarItem.module.scss';
 
@@ -12,6 +14,11 @@ interface SidebarItemProps {
 
 export const SidebarItem:FC<SidebarItemProps> = (props) => {
   const { collapsed, item } = props;
+  const isAuth = useSelector(getUserAuthData);
+
+  if (item.authOnly && !isAuth) {
+    return null;
+  }
   return (
     <AppLink
       theme={AppLinkTheme.SECONDARY}

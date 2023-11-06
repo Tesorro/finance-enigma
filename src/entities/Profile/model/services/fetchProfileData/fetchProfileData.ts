@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { IProfile } from '../../types/profile';
+import { Profile } from '../../types/profile';
 
-export const fetchProfileData = createAsyncThunk<IProfile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
   'profile/fetchProfileData',
   async (_, { extra, rejectWithValue }) => {
     try {
-      const response = await extra.api.get<IProfile>('/profile');
+      const response = await extra.api.get<Profile>('/profile');
 
       return response.data; // state.data = action.payload (в extraReducer'е)
     } catch (e) {
