@@ -1,0 +1,8 @@
+.articleImageBlockComponent {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  max-width: 100%; // если пользователь загрузить слишком большую картинку чтобы не выходила за пределы страницы
+}
