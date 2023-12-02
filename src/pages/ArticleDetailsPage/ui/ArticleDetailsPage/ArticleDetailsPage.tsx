@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -13,6 +13,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import {
   fetchCommentsByArticleId,
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { AddCommentForm } from 'features/addCommentForm';
+import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
@@ -32,6 +34,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text));
+  }, [dispatch]);
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
   });
@@ -48,6 +54,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
       <div className={classNames(cls.articleDetailsPage$, {}, [className])}>
         <ArticleDetails id={id} />
         <Text title="Комментарии" size={TextSize.L} className={cls.commentTitle} />
+        <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
       </div>
     </DynamicModuleLoader>
