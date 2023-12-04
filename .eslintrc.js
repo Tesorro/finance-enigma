@@ -64,6 +64,7 @@ module.exports = {
     'no-params-reassign': 'off',
     'i18next/no-literal-string': 'off',
     'no-undef': 'off',
+    'react/no-array-index-key': 'off',
   },
   globals: {
     __IS_DEV__: true,
