@@ -23,9 +23,13 @@ export const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getMountedReducers();
     Object.entries(reducers).forEach(([name, reducer]) => {
-      store.reducerManager.add(name as StateSchemaKey, reducer);
-      dispatch({ type: `@INIT ${name} reducer` }); // для отладки через браузерное расширение для Redux DevTools. Когда подключается, когда удаляется
+      const mounted = mountedReducers[name as StateSchemaKey];
+      if (!mounted) {
+        store.reducerManager.add(name as StateSchemaKey, reducer);
+        dispatch({ type: `@INIT ${name} reducer` }); // для отладки через браузерное расширение для Redux DevTools. Когда подключается, когда удаляется
+      }
     });
 
     return () => {

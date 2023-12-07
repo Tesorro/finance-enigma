@@ -7,7 +7,10 @@ import { NavigateFunction } from 'react-router-dom';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
 
-export function createReduxStore(initialStore?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>, navigate?: NavigateFunction) {
+export function createReduxStore(
+  initialStore?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>,
+) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
@@ -23,7 +26,6 @@ export function createReduxStore(initialStore?: StateSchema, asyncReducers?: Red
       thunk: {
         extraArgument: {
           api: $api,
-          navigate,
         },
       },
     }),
