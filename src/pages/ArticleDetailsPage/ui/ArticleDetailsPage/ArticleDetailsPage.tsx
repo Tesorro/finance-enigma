@@ -14,6 +14,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
+import { ArticleDetailsPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
 import {
   fetchArticleRecommendations,
@@ -47,9 +48,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
   const navigate = useNavigate();
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -66,7 +64,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailsPage$, {}, [className])}>
-        <Button onClick={onBackToList}>Назад к списку</Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text title="Рекомендуем" size={TextSize.L} className={cls.commentTitle} />
         <ArticleList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} target="_blank" />
