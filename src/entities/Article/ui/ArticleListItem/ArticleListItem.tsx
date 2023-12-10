@@ -1,16 +1,12 @@
-import {
-  FC, HTMLAttributeAnchorTarget, memo, useCallback,
-} from 'react';
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
-import CopyIcon from 'src/shared/assets/icons/user-32-32.png';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button } from 'shared/ui/Button/Button';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -32,10 +28,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
   } = props;
 
   const views = (
-    <>
-      <Text text={String(article.views)} className={cls.views} />
-      <Icon Svg={CopyIcon} className={cls.icon} />
-    </>
+    <Text text={String(article.views)} className={cls.views} />
   );
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
