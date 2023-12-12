@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
 import {
@@ -62,13 +63,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailsPage$, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text title="Рекомендуем" size={TextSize.L} className={cls.commentTitle} />
-        <ArticleList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} target="_blank" />
-        <Text title="Комментарии" size={TextSize.L} className={cls.commentTitle} />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList comments={comments} isLoading={commentsIsLoading} />
+        <VStack gap="16" max>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text title="Рекомендуем" size={TextSize.L} className={cls.commentTitle} />
+          <ArticleList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} target="_blank" />
+          <Text title="Комментарии" size={TextSize.L} className={cls.commentTitle} />
+          <AddCommentForm onSendComment={onSendComment} />
+          <CommentList comments={comments} isLoading={commentsIsLoading} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
 

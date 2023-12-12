@@ -10,7 +10,7 @@ import {
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -33,20 +33,21 @@ export const ProfilePageHeader:FC<ProfilePageHeaderProps> = (props) => {
     dispatch(updateProfileData());
   }, [dispatch]);
   return (
-    <div className={classNames(cls.profilePageHeader, {}, [className])}>
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text title="Профиль" />
       {canEdit && (
-        <div className={cls.btnsWrapper}>
+        // eslint-disable-next-line react/jsx-no-useless-fragment
+        <>
           {readonly
-            ? <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE} onClick={onEdit}>Редактировать</Button>
+            ? <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>Редактировать</Button>
             : (
-              <>
-                <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE} onClick={onSave}>Сохранить</Button>
-                <Button className={cls.saveBtn} theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>Отменить</Button>
-              </>
+              <HStack gap="8">
+                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>Сохранить</Button>
+                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>Отменить</Button>
+              </HStack>
             )}
-        </div>
+        </>
       )}
-    </div>
+    </HStack>
   );
 };
