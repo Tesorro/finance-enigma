@@ -8,7 +8,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/Page';
-import { ArticlePageFilters } from 'pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage';
 import {

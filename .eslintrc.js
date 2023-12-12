@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'finance-enigma-plugin',
   ],
   rules: {
     'func-names': 'off',
@@ -65,6 +66,7 @@ module.exports = {
     'i18next/no-literal-string': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
+    'finance-enigma-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

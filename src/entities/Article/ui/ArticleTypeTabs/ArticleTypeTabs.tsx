@@ -5,7 +5,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entities/Article';
+import { ArticleType } from '../../../Article';
 
 interface ArticleTypeTabsProps {
   className?: string;
