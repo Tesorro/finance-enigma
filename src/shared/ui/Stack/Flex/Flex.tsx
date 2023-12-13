@@ -1,4 +1,6 @@
-import { FC, ReactNode } from 'react';
+import {
+  DetailedHTMLProps, FC, HTMLAttributes, ReactNode,
+} from 'react';
 
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
@@ -34,7 +36,9 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gap32,
 };
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+
+export interface FlexProps extends DivProps{
   className?: string;
   children: ReactNode;
   justify?: FlexJustify;
@@ -46,7 +50,7 @@ export interface FlexProps {
 
 export const Flex: FC<FlexProps> = (props) => {
   const {
-    className, children, justify = 'start', direction = 'row', align = 'center', gap, max,
+    className, children, justify = 'start', direction = 'row', align = 'center', gap, max, ...otherProps
   } = props;
   const classes = [
     className,
@@ -60,7 +64,7 @@ export const Flex: FC<FlexProps> = (props) => {
   };
 
   return (
-    <div className={classNames(cls.flex, mods, classes)}>
+    <div className={classNames(cls.flex, mods, classes)} {...otherProps}>
       {children}
     </div>
   );
