@@ -5,6 +5,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Select } from 'shared/ui/Select/Select';
+import { Listbox } from 'shared/ui/ListBox/ListBox';
 import { Currency } from '../../index';
 
 interface CurrencySelectProps {
@@ -30,13 +31,15 @@ export const CurrencySelect:FC<CurrencySelectProps> = memo((props) => {
   }, [onChange]);
 
   return (
-    <Select
+    <Listbox
       className={classNames('', {}, [className])}
-      options={options}
-      label="Укажите валюту"
-      value={value}
       onChange={onChangeHandler}
+      value={value}
+      items={options}
+      defaultValue="Укажите валюту"
+      label="Укажите валюту"
       readonly={readonly}
+      direction="top"
     />
   );
 });

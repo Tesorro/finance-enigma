@@ -5,6 +5,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Select } from 'shared/ui/Select/Select';
+import { Listbox } from 'shared/ui/ListBox/ListBox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
@@ -32,13 +33,25 @@ export const CountrySelect:FC<CountrySelectProps> = memo((props) => {
   }, [onChange]);
 
   return (
-    <Select
+    <Listbox
       className={classNames('', {}, [className])}
-      options={options}
-      label="Укажите страну"
-      value={value}
       onChange={onChangeHandler}
+      value={value}
+      items={options}
+      defaultValue="Укажите страну"
+      label="Укажите страну"
       readonly={readonly}
+      direction="top"
     />
   );
+  // return (
+  //   <Select
+  //     className={classNames('', {}, [className])}
+  //     options={options}
+  //     label="Укажите страну"
+  //     value={value}
+  //     onChange={onChangeHandler}
+  //     readonly={readonly}
+  //   />
+  // );
 });
