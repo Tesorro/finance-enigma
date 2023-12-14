@@ -39,7 +39,7 @@ export const CurrencySelect:FC<CurrencySelectProps> = memo((props) => {
       defaultValue="Укажите валюту"
       label="Укажите валюту"
       readonly={readonly}
-      direction="top"
+      direction="top right"
     />
   );
 });
