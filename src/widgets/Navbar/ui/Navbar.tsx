@@ -4,7 +4,9 @@ import React, { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
@@ -22,12 +24,17 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const dispatch = useAppDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
   const authData = useSelector(getUserAuthData);
   const onCloseModal = useCallback(() => setIsAuthModal(false), []);
   const onOpenModal = useCallback(() => setIsAuthModal(true), []);
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
+
+  const isAdminPanelAvailable = isAdmin || isManager;
+
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
@@ -35,6 +42,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           direction="bottom left"
           className={cls.dropdown}
           items={[
+            ...(isAdminPanelAvailable ? [{
+              content: 'Админка',
+              href: RoutePath.admin_panel,
+            }] : []),
             {
               content: 'Профиль',
               href: RoutePath.profile + authData.id,
