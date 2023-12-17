@@ -41,11 +41,31 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = mem
         // eslint-disable-next-line react/jsx-no-useless-fragment
         <>
           {readonly
-            ? <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>Редактировать</Button>
+            ? (
+              <Button
+                theme={ButtonTheme.OUTLINE}
+                onClick={onEdit}
+                data-testid="EditableProfileCardHeader.EditButton"
+              >
+                Редактировать
+              </Button>
+            )
             : (
               <HStack gap="8">
-                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>Сохранить</Button>
-                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>Отменить</Button>
+                <Button
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onSave}
+                  data-testid="EditableProfileCardHeader.SaveButton"
+                >
+                  Сохранить
+                </Button>
+                <Button
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCancelEdit}
+                  data-testid="EditableProfileCardHeader.CancelButton"
+                >
+                  Отменить
+                </Button>
               </HStack>
             )}
         </>
