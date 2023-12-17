@@ -14,9 +14,7 @@ interface ProfilePageProps {
 const ProfilePage:FC<ProfilePageProps> = (props) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
-  if (!id) {
-    return <Text title="Профиль не найден" />;
-  }
+
   return (
     <Page className={classNames('', {}, [className])}>
       <VStack gap="16" max>
