@@ -3,7 +3,6 @@ import {
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
-import { NavigateFunction } from 'react-router-dom';
 import { uiReducer } from 'features/UI';
 import { rtkApi } from 'shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
