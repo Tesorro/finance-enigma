@@ -5,7 +5,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Select } from 'shared/ui/Select/Select';
-import { Listbox } from 'shared/ui/ListBox/ListBox';
+import { Listbox } from 'shared/ui/Popups/components/ListBox/ListBox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
