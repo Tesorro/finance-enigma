@@ -1,6 +1,6 @@
 import React, { FC, memo, useCallback } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { Button } from '../Button/Button';
 import cls from './Code.module.scss';

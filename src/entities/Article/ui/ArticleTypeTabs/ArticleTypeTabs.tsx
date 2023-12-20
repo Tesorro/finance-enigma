@@ -2,9 +2,9 @@ import {
   FC, memo, useCallback, useMemo,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
+import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
 import { ArticleType } from '../../../Article';
 
 interface ArticleTypeTabsProps {

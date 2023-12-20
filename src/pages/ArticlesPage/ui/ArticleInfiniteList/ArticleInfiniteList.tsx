@@ -1,8 +1,8 @@
 import { FC, memo } from 'react';
 
 import { useSelector } from 'react-redux';
-import { ArticleList } from 'entities/Article';
-import { Text } from 'shared/ui/Text/Text';
+import { ArticleList } from '@/entities/Article';
+import { Text } from '@/shared/ui/Text/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
 import {
   getArticlesPageError,

@@ -1,12 +1,12 @@
 import { FC, memo } from 'react';
 
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Input } from 'shared/ui/Input/Input';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { Input } from '@/shared/ui/Input/Input';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { Country, CountrySelect } from '../../../Country';
 import { Currency, CurrencySelect } from '../../../Currency';
 import { Profile } from '../../model/types/profile';

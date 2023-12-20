@@ -67,6 +67,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'finance-enigma-plugin/path-checker': 'error',
+    'no-console': 'off',
   },
   globals: {
     __IS_DEV__: true,
