@@ -42,11 +42,9 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <AnimationProvider>
-          <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
-            <NotificationList />
-          </Drawer>
-        </AnimationProvider>
+        <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
+          <NotificationList />
+        </Drawer>
       </MobileView>
     </div>
   );
