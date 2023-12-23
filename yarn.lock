@@ -7215,10 +7215,10 @@ eslint-module-utils@^2.8.0:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-finance-enigma-plugin@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/eslint-plugin-finance-enigma-plugin/-/eslint-plugin-finance-enigma-plugin-0.0.6.tgz"
-  integrity sha512-+Y22rJns4KiinCZooMdg0hHGrrK7vILsMIl4j+thYuL/f9y7sfJKfxt7pRVHvi4h+RJlO87wfoXE7pA4sdm7EQ==
+eslint-plugin-finance-enigma-plugin@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/eslint-plugin-finance-enigma-plugin/-/eslint-plugin-finance-enigma-plugin-0.0.7.tgz"
+  integrity sha512-0TqqSWf24oxRplV3y8MTzValQY7ua2nRrGKG/hYUX7216TVXb3HsH7aG9bV3yg5h5V48tBplQAQgLvkWlDlzJw==
   dependencies:
     micromatch "^4.0.5"
     requireindex "^1.2.0"
