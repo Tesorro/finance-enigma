@@ -2,7 +2,7 @@ import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';

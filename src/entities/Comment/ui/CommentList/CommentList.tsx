@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { VStack } from '@/shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
