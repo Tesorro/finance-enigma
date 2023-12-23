@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 
 import { Comment } from '../../model/types/comment';
 
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -39,7 +39,7 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
 
   return (
     <VStack gap="8" max className={classNames(cls.commentCard, {}, [className, cls.loading])}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
         <Text title={comment.user.username} className={cls.username} />
       </AppLink>

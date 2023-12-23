@@ -4,7 +4,7 @@ import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts'
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -46,7 +46,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
           )}
           <div className={cls.footer}>
-            <AppLink target={target} to={RoutePath.article_details + article.id}>
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
               {' '}
               <Button>Читать далее...</Button>
               {' '}
@@ -60,7 +60,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
   }
 
   return (
-    <AppLink target={target} to={RoutePath.article_details + article.id} className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
+    <AppLink target={target} to={getRouteArticleDetails(article.id)} className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
           <img src={article.img} alt={article.title} className={cls.img} />
