@@ -1,7 +1,6 @@
 import { FC, memo, useMemo } from 'react';
 
-import { ArticleSortField } from '../../model/consts/articleConsts';
-
+import { ArticleSortField } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortOrder } from '@/shared/types';
 import { Select, SelectOption } from '@/shared/ui/Select';
@@ -9,11 +8,11 @@ import { Select, SelectOption } from '@/shared/ui/Select';
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
-  className?: string;
-  sort: ArticleSortField;
-  order: SortOrder;
-  onChangeOrder: (newOrder: SortOrder) => void;
-  onChangeSort: (newSort: ArticleSortField) => void;
+    className?: string;
+    sort: ArticleSortField;
+    order: SortOrder;
+    onChangeOrder: (newOrder: SortOrder) => void;
+    onChangeSort: (newSort: ArticleSortField) => void;
 }
 
 export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo((props) => {

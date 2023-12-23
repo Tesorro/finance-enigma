@@ -1,7 +1,6 @@
 import { FC, memo } from 'react';
 
-import { ArticleView } from '../../model/consts/articleConsts';
-
+import { ArticleView } from '@/entities/Article';
 import ListIcon from '@/shared/assets/icons/bi_list.svg';
 import TiledIcon from '@/shared/assets/icons/fe_tiled.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -11,9 +10,9 @@ import { Icon } from '@/shared/ui/Icon';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
-  className?: string;
-  view: ArticleView;
-  onViewClick?: (view: ArticleView) => void;
+    className?: string;
+    view: ArticleView;
+    onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [

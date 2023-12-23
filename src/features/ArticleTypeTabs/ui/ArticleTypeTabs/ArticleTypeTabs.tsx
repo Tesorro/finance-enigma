@@ -2,15 +2,14 @@ import {
   FC, memo, useCallback, useMemo,
 } from 'react';
 
-import { ArticleType } from '../../../Article';
-
+import { ArticleType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
 
 interface ArticleTypeTabsProps {
-  className?: string;
-  value: ArticleType;
-  onChangeType: (type: ArticleType) => void;
+    className?: string;
+    value: ArticleType;
+    onChangeType: (type: ArticleType) => void;
 }
 
 export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
