@@ -8,15 +8,12 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev, project }: BuildOptions): webpack.WebpackPluginInstance[] {
+  const isProd = !isDev;
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __PROJECT__: JSON.stringify(project),
@@ -42,6 +39,13 @@ export function buildPlugins({ paths, isDev, project }: BuildOptions): webpack.W
     // plugins.push(new BundleAnalyzerPlugin({
     //   openAnalyzer: false,
     // }));
+  }
+
+  if (isProd) {
+    plugins.push(new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
+    }));
   }
 
   return plugins;
