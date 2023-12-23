@@ -1,16 +1,16 @@
 import React, { FC, memo, useCallback } from 'react';
-
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Avatar } from '@/shared/ui/Avatar';
-import { Dropdown } from '@/shared/ui/Popups';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import cls from './AvatarDropdown.module.scss';
 import { RoutePath } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
+
+import cls from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {
   className?: string;

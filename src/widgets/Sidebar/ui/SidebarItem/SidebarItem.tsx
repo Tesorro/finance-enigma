@@ -1,10 +1,12 @@
 import { FC } from 'react';
-
 import { useSelector } from 'react-redux';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { getUserAuthData } from '@/entities/User';
+
 import { ISidebarItem } from '../../model/types/sidebar';
+
+import { getUserAuthData } from '@/entities/User';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {

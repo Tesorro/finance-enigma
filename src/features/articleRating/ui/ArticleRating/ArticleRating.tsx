@@ -1,8 +1,10 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+
+import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
+
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
-import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ArticleRatingProps {

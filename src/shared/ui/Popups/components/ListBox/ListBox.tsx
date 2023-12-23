@@ -1,12 +1,15 @@
-import { Fragment, ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
+import { Fragment, ReactNode } from 'react';
+
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
-import { mapDirectionClass } from '../../styles/consts';
-import { HStack } from '../../../Stack';
-import { Button } from '../../../Button/Button';
+
 import cls from './ListBox.module.scss';
-import popupCls from '../../styles/popup.module.scss';
 
 // const people = [
 //   { id: 1, name: 'Durward Reynolds', unavailable: false },

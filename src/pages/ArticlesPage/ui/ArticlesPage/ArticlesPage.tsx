@@ -1,16 +1,19 @@
 import { FC, memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
+import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage';
+import { initArticlesPage } from '../../model/services/initArticlesPage';
+import { articlePageReducer } from '../../model/slices/articlesPageSlice';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
-import { initArticlesPage } from '../../model/services/initArticlesPage';
-import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
-import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
-import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage';
-import { articlePageReducer } from '../../model/slices/articlesPageSlice';
-import cls from './ArticlesPage.module.scss';
 import { Page } from '@/widgets/Page';
+
+import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
   className?: string;

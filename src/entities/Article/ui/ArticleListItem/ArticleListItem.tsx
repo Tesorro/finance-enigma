@@ -1,17 +1,18 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
-import { Text } from '@/shared/ui/Text';
-import { Card } from '@/shared/ui/Card';
+import { RoutePath } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
-import { AppLink } from '@/shared/ui/AppLink';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { Article, ArticleTextBlock } from '../../model/types/article';
-import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
+import { Card } from '@/shared/ui/Card';
+import { Text } from '@/shared/ui/Text';
+
 import cls from './ArticleListItem.module.scss';
-import { RoutePath } from '@/shared/const/router';
 
 interface ArticleListItemProps {
   className?: string;

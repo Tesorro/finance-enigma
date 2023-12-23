@@ -1,8 +1,9 @@
 import React, { FC, memo, useCallback } from 'react';
 
+import { Button } from '../Button/Button';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Button } from '../Button/Button';
 import cls from './Code.module.scss';
 
 interface CodeProps {

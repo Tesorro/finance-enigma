@@ -23,10 +23,12 @@ module.exports = {
     'i18next',
     'react-hooks',
     'finance-enigma-plugin',
+    'unused-imports',
   ],
   rules: {
     'func-names': 'off',
     'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
     'react/no-unused-prop-types': 'warn',
     'react/self-closing-comp': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -77,6 +79,28 @@ module.exports = {
       ignoreImportPatterns: ['**/StoreProvider'],
     }],
     'no-console': 'off',
+    'import/order': [
+      'error',
+      {
+        pathGroups: [
+          {
+            pattern: '@/**',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: './**.module.*',
+            group: 'internal',
+            position: 'after',
+          },
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: false,
+        },
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

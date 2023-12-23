@@ -2,10 +2,10 @@ import {
   FC, memo, useCallback, useMemo,
 } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-
-import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '../../../Article';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { TabItem, Tabs } from '@/shared/ui/Tabs';
 
 interface ArticleTypeTabsProps {
   className?: string;

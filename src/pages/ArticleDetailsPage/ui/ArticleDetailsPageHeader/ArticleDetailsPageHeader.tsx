@@ -1,14 +1,14 @@
 import { FC, memo, useCallback } from 'react';
-
-import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { useNavigate } from 'react-router-dom';
 
-import { Button } from '@/shared/ui/Button';
-import { getArticleDetailsData } from '@/entities/Article';
-import { HStack } from '@/shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
+
+import { getArticleDetailsData } from '@/entities/Article';
 import { RoutePath } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;

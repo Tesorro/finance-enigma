@@ -1,15 +1,16 @@
 import { FC, memo } from 'react';
 
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
-import { Loader } from '@/shared/ui/Loader';
-import { Avatar } from '@/shared/ui/Avatar';
-import { HStack, VStack } from '@/shared/ui/Stack';
 import { Country, CountrySelect } from '../../../Country';
 import { Currency, CurrencySelect } from '../../../Currency';
 import { Profile } from '../../model/types/profile';
+
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Input } from '@/shared/ui/Input';
+import { Loader } from '@/shared/ui/Loader';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {

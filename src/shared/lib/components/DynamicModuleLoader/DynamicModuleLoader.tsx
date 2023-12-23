@@ -1,9 +1,10 @@
-import React, { FC, PropsWithChildren, useEffect } from 'react';
-
-import { useStore } from 'react-redux';
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
+import React, { FC, PropsWithChildren, useEffect } from 'react';
+import { useStore } from 'react-redux';
+
 import { useAppDispatch } from '../../hooks/useAppDispatch';
+
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
 // eslint-disable-next-line finance-enigma-plugin/layer-imports
 import { StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 

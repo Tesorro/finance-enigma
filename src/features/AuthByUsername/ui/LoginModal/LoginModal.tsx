@@ -1,10 +1,10 @@
 import { FC, Suspense } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
-
-import { Modal } from '@/shared/ui/Modal';
-import { Loader } from '@/shared/ui/Loader';
 import { LoginFormAsync as LoginForm } from '../LoginForm/LoginForm.async';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Loader } from '@/shared/ui/Loader';
+import { Modal } from '@/shared/ui/Modal';
 
 interface LoginModalProps {
   className?: string;
