@@ -5125,7 +5125,7 @@ braces@^2.3.1, braces@^2.3.2:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-braces@^3.0.1, braces@~3.0.2:
+braces@^3.0.2, braces@~3.0.2:
   version "3.0.2"
   resolved "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz"
   integrity sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==
@@ -7129,11 +7129,12 @@ eslint-module-utils@^2.7.2:
     debug "^3.2.7"
     find-up "^2.1.0"
 
-eslint-plugin-finance-enigma-plugin@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/eslint-plugin-finance-enigma-plugin/-/eslint-plugin-finance-enigma-plugin-0.0.4.tgz"
-  integrity sha512-/lx81Y9X3mdiVolHhcUK0tlJGUkraHTGc+qlbOBe3f99TdYkr68kwDLuBZYtBBc39i9aVn3QV+oZsJyoDGFcfQ==
+eslint-plugin-finance-enigma-plugin@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/eslint-plugin-finance-enigma-plugin/-/eslint-plugin-finance-enigma-plugin-0.0.6.tgz"
+  integrity sha512-+Y22rJns4KiinCZooMdg0hHGrrK7vILsMIl4j+thYuL/f9y7sfJKfxt7pRVHvi4h+RJlO87wfoXE7pA4sdm7EQ==
   dependencies:
+    micromatch "^4.0.5"
     requireindex "^1.2.0"
 
 eslint-plugin-i18next@^5.1.2:
@@ -10740,13 +10741,13 @@ micromatch@^3.1.10, micromatch@^3.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.2"
 
-micromatch@^4.0.0, micromatch@^4.0.2, micromatch@^4.0.4:
-  version "4.0.4"
-  resolved "https://registry.npmjs.org/micromatch/-/micromatch-4.0.4.tgz"
-  integrity sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==
+micromatch@^4.0.0, micromatch@^4.0.2, micromatch@^4.0.4, micromatch@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.npmjs.org/micromatch/-/micromatch-4.0.5.tgz"
+  integrity sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==
   dependencies:
-    braces "^3.0.1"
-    picomatch "^2.2.3"
+    braces "^3.0.2"
+    picomatch "^2.3.1"
 
 miller-rabin@^4.0.0:
   version "4.0.1"

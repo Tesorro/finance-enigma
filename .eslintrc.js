@@ -72,6 +72,10 @@ module.exports = {
     'finance-enigma-plugin/public-api-imports': ['error', {
       alias: '@',
     }],
+    'finance-enigma-plugin/layer-imports': ['error', {
+      alias: '@',
+      ignoreImportPatterns: ['**/StoreProvider'],
+    }],
     'no-console': 'off',
   },
   globals: {

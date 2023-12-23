@@ -3,8 +3,9 @@ import React, { FC, PropsWithChildren, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager } from '@/app/providers/StoreProvider';
-import { StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
+// eslint-disable-next-line finance-enigma-plugin/layer-imports
+import { StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
 
 export type ReducersList = {
   [name in StateSchemaKey]?: Reducer;
