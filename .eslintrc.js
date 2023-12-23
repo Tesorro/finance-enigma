@@ -66,7 +66,9 @@ module.exports = {
     'i18next/no-literal-string': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
-    'finance-enigma-plugin/path-checker': 'error',
+    'finance-enigma-plugin/path-checker': ['error', {
+      alias: '@',
+    }],
     'no-console': 'off',
   },
   globals: {
