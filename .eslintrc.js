@@ -69,6 +69,9 @@ module.exports = {
     'finance-enigma-plugin/path-checker': ['error', {
       alias: '@',
     }],
+    'finance-enigma-plugin/public-api-imports': ['error', {
+      alias: '@',
+    }],
     'no-console': 'off',
   },
   globals: {
